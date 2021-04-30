@@ -1,6 +1,6 @@
 <?php
 /*
-** @script	YoYo class for text encryption with password v1.2
+** @script	YoYo class for text encryption with password v1.9
 ** @author	Glitch3R(YoYo)
 ** @copyright	Copyright (C) 2020
 */
