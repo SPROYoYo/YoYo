@@ -7,8 +7,12 @@ $YoYo = new YoYo();
 ** If you want to disable gzip compression use: $YoYo->gzip = false;
 ** or/and
 ** If you want to disable custom compression use: $YoYo->compress = false;
+** or/and
+** If you want to disable usage of encode/decode with base64 use: $YoYo->base64 = false;
+
 ** 
-** Personally, I recommend using gzip and custom compression to reduce encryption output size
+** Personally, I recommend using gzip, custom compression, and base64 to reduce encryption output size 
+** and be able to save it anywhere without being corrupted.
 */
 
 $password = 'password124plm124#$3';
