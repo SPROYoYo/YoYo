@@ -2,16 +2,19 @@
 include 'YoYo.php';
 
 $YoYo = new YoYo();
-$YoYo->compress = true; # activam comprimarea custom (BETA)
-$YoYo->gzip = true; # activam comprimarea gzip
-$YoYo->base64 = true; # activam encodarea in base64
 
-
+/*
+** If you want to disable gzip compression use: $YoYo->gzip = false;
+** or/and
+** If you want to disable custom compression use: $YoYo->compress = false;
+** 
+** Personally, I recommend using gzip and custom compression to reduce encryption output size
+*/
 
 $password = 'password124plm124#$3';
-$string = 'un text de TesT care contine LItEr3, C!fre si C4Ractere spec!@le 12890!@#$%^&*()';
+$string = 'a TexT containing Ch4R4c3r5, D!g!ts and Sp3C!@L Ch4R4c3r5 12890!@#$%^&*() ❤️🥺🤗';
 
-$encrypted = $YoYo->encrypt($password, $string); # criptat
-$decrypted = $YoYo->decrypt($password, $encrypted); # decriptat
+$encrypted = $YoYo->encrypt($password, $string); # encrypted
+$decrypted = $YoYo->decrypt($password, $encrypted); # decrypted
 
 ?>
