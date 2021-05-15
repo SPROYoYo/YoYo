@@ -1,7 +1,7 @@
 <?php
 /*
-** @script	YoYo class for text encryption with password v1.9
-** @author	Glitch3R(YoYo)
+** @script		YoYo class for text encryption with password v1.10
+** @author 		Glitch3R(YoYo)
 ** @copyright	Copyright (C) 2020
 */
 
@@ -62,7 +62,8 @@ class YoYo {
 		return $return;
 	}
 	
-	private function YoYoAction($number, $object, $order='ASC') {
+	//split'n'shuffle
+	private function SplitAndShuffle($number, $object, $order='ASC') {
 		if($number == '0') {
 			$objreturn = $object;
 		}
@@ -113,35 +114,35 @@ class YoYo {
 					$TC = strrev($TC);
 				}
 				else if($PassSplit[$i] == '1') {
-					$TC = $this->YoYoAction('2', $TC, 'DESC');
+					$TC = $this->SplitAndShuffle('2', $TC, 'DESC');
 				}
 				else if($PassSplit[$i] == '2') {
-					$TC = $this->YoYoAction('3', $TC, 'DESC');
+					$TC = $this->SplitAndShuffle('3', $TC, 'DESC');
 				}
 				else if($PassSplit[$i] == '3') {
-					$TC = $this->YoYoAction('4', $TC, 'DESC');
+					$TC = $this->SplitAndShuffle('4', $TC, 'DESC');
 				}
 				else if($PassSplit[$i] == '4') {
-					$TC = $this->YoYoAction('5', $TC, 'DESC');
+					$TC = $this->SplitAndShuffle('5', $TC, 'DESC');
 				}
 				else if($PassSplit[$i] == '5') {
-					$TC = $this->YoYoAction('6', $TC, 'DESC');
+					$TC = $this->SplitAndShuffle('6', $TC, 'DESC');
 				}
 				else if($PassSplit[$i] == '6') {
-					$TC = $this->YoYoAction('5', $TC, 'DESC');
-					$TC = $this->YoYoAction('6', $TC, 'ASC');
+					$TC = $this->SplitAndShuffle('5', $TC, 'DESC');
+					$TC = $this->SplitAndShuffle('6', $TC, 'ASC');
 				}
 				else if($PassSplit[$i] == '7') {
-					$TC = $this->YoYoAction('4', $TC, 'DESC');
-					$TC = $this->YoYoAction('5', $TC, 'ASC');
+					$TC = $this->SplitAndShuffle('4', $TC, 'DESC');
+					$TC = $this->SplitAndShuffle('5', $TC, 'ASC');
 				}
 				else if($PassSplit[$i] == '8') {
-					$TC = $this->YoYoAction('3', $TC, 'DESC');
-					$TC = $this->YoYoAction('4', $TC, 'ASC');
+					$TC = $this->SplitAndShuffle('3', $TC, 'DESC');
+					$TC = $this->SplitAndShuffle('4', $TC, 'ASC');
 				}
 				else if($PassSplit[$i] == '9') {
-					$TC = $this->YoYoAction('2', $TC, 'DESC');
-					$TC = $this->YoYoAction('3', $TC, 'ASC');
+					$TC = $this->SplitAndShuffle('2', $TC, 'DESC');
+					$TC = $this->SplitAndShuffle('3', $TC, 'ASC');
 				}
 				else {
 					$TC = $TC;
@@ -154,35 +155,35 @@ class YoYo {
 					$TC = strrev($TC);
 				}
 				else if($PassSplit[$i] == '1') {
-					$TC = strrev($this->YoYoAction('2', strrev($TC), 'DESC'));
+					$TC = strrev($this->SplitAndShuffle('2', strrev($TC), 'DESC'));
 				}
 				else if($PassSplit[$i] == '2') {
-					$TC = strrev($this->YoYoAction('3', strrev($TC), 'DESC'));
+					$TC = strrev($this->SplitAndShuffle('3', strrev($TC), 'DESC'));
 				}
 				else if($PassSplit[$i] == '3') {
-					$TC = strrev($this->YoYoAction('4', strrev($TC), 'DESC'));
+					$TC = strrev($this->SplitAndShuffle('4', strrev($TC), 'DESC'));
 				}
 				else if($PassSplit[$i] == '4') {
-					$TC = strrev($this->YoYoAction('5', strrev($TC), 'DESC'));
+					$TC = strrev($this->SplitAndShuffle('5', strrev($TC), 'DESC'));
 				}
 				else if($PassSplit[$i] == '5') {
-					$TC = strrev($this->YoYoAction('6', strrev($TC), 'DESC'));
+					$TC = strrev($this->SplitAndShuffle('6', strrev($TC), 'DESC'));
 				}
 				else if($PassSplit[$i] == '6') {
-					$TC = strrev($this->YoYoAction('6', strrev($TC), 'ASC'));
-					$TC = strrev($this->YoYoAction('5', strrev($TC), 'DESC'));
+					$TC = strrev($this->SplitAndShuffle('6', strrev($TC), 'ASC'));
+					$TC = strrev($this->SplitAndShuffle('5', strrev($TC), 'DESC'));
 				}
 				else if($PassSplit[$i] == '7') {
-					$TC = strrev($this->YoYoAction('5', strrev($TC), 'ASC'));
-					$TC = strrev($this->YoYoAction('4', strrev($TC), 'DESC'));
+					$TC = strrev($this->SplitAndShuffle('5', strrev($TC), 'ASC'));
+					$TC = strrev($this->SplitAndShuffle('4', strrev($TC), 'DESC'));
 				}
 				else if($PassSplit[$i] == '8') {
-					$TC = strrev($this->YoYoAction('4', strrev($TC), 'ASC'));
-					$TC = strrev($this->YoYoAction('3', strrev($TC), 'DESC'));
+					$TC = strrev($this->SplitAndShuffle('4', strrev($TC), 'ASC'));
+					$TC = strrev($this->SplitAndShuffle('3', strrev($TC), 'DESC'));
 				}
 				else if($PassSplit[$i] == '9') {
-					$TC = strrev($this->YoYoAction('3', strrev($TC), 'ASC'));
-					$TC = strrev($this->YoYoAction('2', strrev($TC), 'DESC'));
+					$TC = strrev($this->SplitAndShuffle('3', strrev($TC), 'ASC'));
+					$TC = strrev($this->SplitAndShuffle('2', strrev($TC), 'DESC'));
 				}
 				else {
 				$TC = $TC;
